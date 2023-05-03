@@ -26,9 +26,6 @@
     "winston": "^3.8.2",
     "node": ""
   },
-  "engines": {
-    "node": "v16.18.1"
-  },
   "devDependencies": {
     "nodemon": "^2.0.22"
   }
