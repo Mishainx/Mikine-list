@@ -25,7 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname +'/public'));
 
 app.use(session({
-    cookie: {maxAge: 864000},
     secret: config.SESSION_SECRET,
     resave:true,
     saveUninitialized:false
