@@ -10,7 +10,6 @@ import session from "express-session";
 import pacientsRouter from "./routes/pacients.routes.js";
 import listRouter from "./routes/list.routes.js";
 import { addLogger } from "./config/logger.js";
-import { MemoryStore } from "express-session";
 
 export const app = express();
 let PORT = config.PORT
@@ -27,9 +26,6 @@ app.use(express.static(__dirname +'/public'));
 
 app.use(session({
     cookie: {maxAge: 864000},
-    store: new MemoryStore({
-        checkPeriod: 86400000 // prune expired entries every 24h
-    }),
     secret: config.SESSION_SECRET,
     resave:true,
     saveUninitialized:false
