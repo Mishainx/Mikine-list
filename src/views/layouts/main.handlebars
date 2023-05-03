@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/5577c2c747.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    {{#if nav}}
+    <header>
+        <nav class="navBar">
+        <img src="/img/mikine-logo.png" alt="logo de mikine" class="navLogo">
+        <div id="navBtns" class="navBtns reverse">
+        <i id="baseBtn" class="fa-solid fa-file-circle-plus iconForm"></i>
+        <i id="logOutBtn"class="fas fa-sign-out iconForm"></i>
+        </div>
+        </nav>
+    </header>
+    {{/if}}
+
+    <Main>
+    {{{body}}}
+    </Main>
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "myriad";
+    src: url(../assets/fonts/Myriad\ Pro\ Semibold.ttf);
+  }
+
+body{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    min-height: 100vh;
+    font-family: "myriad";
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    height: 60px;
+}
+
+.navBar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    width: 100%;
+    justify-content:  space-between;
+    padding: 0 30px;
+    margin: 10px;
+}
+.navLogo{
+    width: 32px;
+}
+
+.navBtns{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBtnInput{
+    font-size: 0.7rem;
+    color: rgb(3, 73, 79);
+    border: 8px rgb(3, 73, 79);
+    height: 20px;
+    background-color:rgba(231, 240, 241, 0.1);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgb(10, 156, 169,0.6);
+}
+
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    height: 100%;
+}
+
+.pacientsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 20px;
+}
+
+.loginContainer input{
+    border-color: rgb(10, 156, 169);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgb(10, 156, 169,0.6);
+    outline: 0 none;
+    font-size: 0.7rem;
+    color: rgb(3, 73, 79);
+    padding: 5px;
+}
+
+.loginContainer button{
+    margin-top: 5px;
+    background: whitesmoke;
+    font-size: 0.7rem;
+    background-color: rgb(10, 156, 169);
+    padding: 5px 4px;
+    color: whitesmoke;
+    border: none;
+    filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.loginContainer button:hover{
+   background-color: rgb(8, 101, 109);
+   transition: 0.6s;
+   color: white;
+}
+
+.loginLogo{
+    filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.7));
+    width: 125px;
+}
+
+.listContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+    height: 50%;
+}
+
+.addIcon{
+    font-size: 1rem;
+    border-radius: 50px;
+    color: white;
+    padding: 7px 8px;
+
+}
+
+.addIcon:hover{
+    background-color: white;
+    color: rgb(10, 156, 169);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.divFind{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.searchDiv{
+    width: 101%;
+    padding-right: 3px;
+    display: flex;
+    flex-flow:row-reverse;
+    gap: 8px;
+    align-items: center;    
+}
+
+.searchDiv input{
+    padding: 0;
+}
+
+.iconForm{
+    background-color: rgb(10, 156, 169);
+    color: white;
+    text-align: center;
+    padding: 9px 9px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    justify-content: center;
+}
+
+.iconForm:hover{
+    background-color: white ;
+    color: rgb(10, 156, 169);
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.formAddPacient{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: whitesmoke;
+    color: rgb(10, 156, 169);
+    padding: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.formH2{
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(10, 156, 169);
+    color: whitesmoke;
+}
+
+
+select:focus, textarea:focus, input:focus, input[type]:focus {
+    border-color: rgb(10, 156, 169);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgb(10, 156, 169,0.6);
+    outline: 0 none;
+    font-size: 0.7rem;
+}
+
+.formAddPacient input, textarea{
+    width: 100%;
+    border: rgb(10, 156, 169);
+    box-shadow: rgba(74, 161, 202, 0.2) 0px 8px 24px;
+    font-size: 0.7rem;
+    color: rgb(3, 73, 79);
+    padding:3px
+}
+
+.formAddPacient select{
+    font-size: 0.7rem;
+    border: none;
+}
+
+.formAddPacient button{
+    margin-top: 5px;
+    background: whitesmoke;
+    font-size: 0.7rem;
+    background-color: rgb(10, 156, 169);
+    padding: 5px 4px;
+    color: whitesmoke;
+    border: none;
+}
+
+.formAddPacient button:hover{
+background-color: white;
+color: rgb(10, 156, 169);
+transition: 0.6s;
+}
+
+.pacientService{
+    width: 101%
+}
+
+.Icon{
+    padding: 8px 9px;
+    border-radius: 50px;
+    background-color: rgb(255,255,255,0.3);
+    color: rgb(10, 156, 169);
+    cursor: pointer;
+}
+
+.Icon:hover{
+    background-color: rgb(29, 127, 125);
+    color: rgb(210, 227, 235);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.actionsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 700px;
+    width: 300px;
+}
+
+.addContainer{
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    color: white;
+    padding:5px;
+    background-color: rgb(10, 156, 169) ;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 10px;
+
+}
+
+.btnsForm{
+    display: flex;
+    gap: 10px;
+}
+
+.serviceSelect{
+    padding: 8px 9px;
+    background-color: whitesmoke;
+    color: rgb(3, 73, 79);
+    cursor: pointer;
+    border-color: rgb(10, 156, 169);
+    border-width: 7px;
+    font-size: 0.7rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.serviceOption{
+    color: rgb(3, 73, 79);
+    cursor: pointer;
+    border-color: #80D0C7;
+}
+
+.tablePacients{
+   background-color: whitesmoke;
+   color: rgb(3, 73, 79);
+   border-spacing: 0;
+   width: 900px;
+   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+
+.tableThead{
+    background-color: rgb(10, 156, 169);
+    color: rgb(227, 225, 225);
+}
+
+.errorMessage{
+    font-size: 0.5rem;
+    color: rgb(3, 73, 79);
+    text-align: center;
+}
+
+th,td{
+padding: 5px;
+}
+
+th{
+    font-size: 0.8rem;
+}
+td{
+    font-size: 0.6rem;
+}
+
+.listObservaciones p{
+    font-size: 0.5rem;
+}
+
+.listOffer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px
+}
+
+.lowPriority{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.highPriority{
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    margin: auto;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .pacientsContainer{
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+
+    .addIcon{
+        font-size: 1rem;
+        padding: 10px 12px;
+        border-radius: 50px;
+    }
+
+    .formAddPacient input,textarea{
+        height: 0.8rem;
+        font-size:0.4rem;
+    }
+
+
+    .formAddPacient select{
+        height: 0.8rem;
+        font-size:0.4rem;
+    }
+
+
+
+    .actionsContainer{
+        height: auto;
+        font-size: 0.6rem;
+    }
+
+
+    .tablePacients{
+        width: 600px;
+    }
+
+    .serviceSelect{
+        font-size: 0.6rem;
+    }
+
+    .serviceSelect option{
+        font-size: 0.6rem;
+    }
+
+    th,td{
+        padding: 4px;
+        }
+        
+        th{
+            font-size: 0.7rem;
+        }
+        td{
+            font-size: 0.6rem;
+        }
+    
+}
+

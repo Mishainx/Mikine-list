@@ -1,0 +1,78 @@
+<section class="pacientsContainer" id="pacientsContainer">
+
+    <div id="actionsContainer" class="actionsContainer">
+        <div id ="addContainer" class="addContainer">
+        <i class="fa-sharp fa-solid fa-plus 2xl addIcon" id="addIcon"></i>
+        <p>Agregar paciente</p>
+        </div>
+        <div id="actionsContainerMessage"></div>
+    </div>
+
+    <div class="listContainer" id="listContainer">
+        <select name="servicio" id="serviceSelect" class="serviceSelect">
+            <option class="serviceOption" value="all">Servicios</option>
+            <option class="serviceOption" value="643bbba9e3cf43745358df37">Osteopatía</option>
+            <option class="serviceOption" value="643bae5cf03584b891dda0f3">Acupuntura</option>
+            <option class="serviceOption" value="643bae66f03584b891dda0f5">FKT Particular</option>
+            <option class="serviceOption" value="643c0522c70066562686c860">FKT OSDE</option>
+            <option class="serviceOption" value="643bae89f03584b891dda0ff">RPG Particular</option>
+            <option class="serviceOption" value="643bae84f03584b891dda0fd">RPG OSDE</option>
+            <option class="serviceOption" value="643bae73f03584b891dda0f9">ATM Particular</option>
+            <option class="serviceOption"  value="643bae78f03584b891dda0fb">ATM OSDE</option>
+
+        </select>
+        <div class="tablePacientsContainer"> 
+            <table id="tablePacients" class="tablePacients">
+                <thead class="tableThead">
+                    <tr class="tableTr">
+                        <th>Prioridad</th>
+                        <th>Fecha</th>
+                        <th>Último</th>
+                        <th>Turno</th>
+                        <th>Servicio</th>
+                        <th>Paciente</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Ofrecimientos</th>
+                        <th>Observaciones</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+            {{#each pacients}}
+            <tr class="pacientTr tableTr">
+                <td  class="priorityTd"><div class="{{this.priority}}"></div></td>
+                <td> {{this.date}}</td>
+                <td> {{this.last}}</td>
+                <td>{{this.turno}}</td>
+                <td value={{this.list}}>{{this.servicio}}</td>
+                <td>{{this.name}}</td>
+                <td>
+                                    {{#if this.email}}       
+                    <a href="mailto:{{this.email}}" target="_blank"><i class="fa fa-envelope Icon" aria-hidden="true"></i></a>
+                    {{/if}}    
+                </td>
+                <td>
+                    {{#if this.telephone}}       
+                    <a href="https://api.whatsapp.com/send?phone={{this.telephone}}" target="_blank"><i class="fa fa-whatsapp Icon" aria-hidden="true"></i></a>
+                    {{/if}}
+                </td>
+
+                <td id="listOffer" class="listOffer">
+                    <p id="offerValue">{{this.ofrecimientos}}</p>
+                    <i id="listOfferBtn" class="fa-sharp fa-solid fa-plus Icon listOfferBtn"></i>
+                </td>
+                <td class="listObservaciones"><p>{{this.observaciones}}</p></td>
+                <td><i value={{this._id}} list={{this.list}} id="deleteIcon" class="fa-solid fa-trash deleteIcon Icon"></i></td>
+            </tr>
+            {{/each}}
+            </table>
+            </div>
+            <datalist id="pacientsList">
+            </datalist>
+    </div>
+
+
+    
+</section>
+
+<script src="js/pacients.js"></script>
