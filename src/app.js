@@ -20,6 +20,7 @@ let STRING_CONNECTION = `mongodb+srv://${config.DB_USER}:${config.DB_PASS}@clust
 //Configuración del servidor
 const httpServer = app.listen(PORT,'0.0.0.0', async () => {
     console.log(`Server running on port ${PORT}`);
+    console.log(httpServer)
 });
 
 //Middelware para trabajar con archivos .Json
