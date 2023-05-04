@@ -10,9 +10,12 @@ import session from "express-session";
 import pacientsRouter from "./routes/pacients.routes.js";
 import listRouter from "./routes/list.routes.js";
 import { addLogger } from "./config/logger.js";
+import MongoStore from "connect-mongo";
+
 
 export const app = express();
 let PORT = config.PORT
+let STRING_CONNECTION = `mongodb+srv://${config.DB_USER}:${config.DB_PASS}@cluster0.tjewfez.mongodb.net/${config.DB_NAME}?retryWrites=true&w=majority`
 
 //Configuración del servidor
 const httpServer = app.listen(PORT, async () => {
@@ -24,11 +27,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname +'/public'));
 
-app.use(session({
+let sessionMiddleware = session({
     secret: config.SESSION_SECRET,
-    resave:true,
-    saveUninitialized:false
-}))
+    resave: true,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: STRING_CONNECTION,
+      mongoOptions: {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      },
+      ttl: 1000,
+    }),
+  })
+  
+  app.use(sessionMiddleware);
 
 //Configuración passport
 initializePassport();
