@@ -18,7 +18,7 @@ let PORT = config.PORT
 let STRING_CONNECTION = `mongodb+srv://${config.DB_USER}:${config.DB_PASS}@cluster0.tjewfez.mongodb.net/${config.DB_NAME}?retryWrites=true&w=majority`
 
 //Configuración del servidor
-const httpServer = app.listen(PORT, async () => {
+const httpServer = app.listen(PORT,'0.0.0.0', async () => {
     console.log(`Server running on port ${PORT}`);
 });
 
