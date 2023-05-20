@@ -61,8 +61,8 @@ for(let priority of priorityTds){
                 method:"POST",
                 headers: {
                     "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
+                },
+                body: JSON.stringify({
                     pacient,
                     list,
                     priorityValue
