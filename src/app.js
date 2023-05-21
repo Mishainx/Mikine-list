@@ -11,6 +11,7 @@ import pacientsRouter from "./routes/pacients.routes.js";
 import listRouter from "./routes/list.routes.js";
 import { addLogger } from "./config/logger.js";
 import MongoStore from "connect-mongo";
+import cors from "cors"
 
 
 export const app = express();
@@ -26,6 +27,7 @@ const httpServer = app.listen(PORT,'0.0.0.0', async () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname +'/public'));
+app.use(cors())
 
 let sessionMiddleware = session({
     secret: config.SESSION_SECRET,
