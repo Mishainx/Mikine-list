@@ -15,7 +15,7 @@ import cors from "cors"
 
 
 export const app = express();
-let PORT = config.PORT
+let PORT = `${config.PORT}`
 let STRING_CONNECTION = `mongodb+srv://${config.DB_USER}:${config.DB_PASS}@cluster0.tjewfez.mongodb.net/${config.DB_NAME}?retryWrites=true&w=majority`
 
 //Configuración del servidor
@@ -32,7 +32,7 @@ app.use(express.static(__dirname +'/public'));
 app.use(cors())
 
 let sessionMiddleware = session({
-    secret: config.SESSION_SECRET,
+    secret: `${config.SESSION_SECRET}`,
     resave: true,
     saveUninitialized: false,
     store: MongoStore.create({
@@ -44,7 +44,6 @@ let sessionMiddleware = session({
       ttl: 1000,
     }),
   })
-  console.log(config.SESSION_SECRET)
   app.use(sessionMiddleware);
 
 //Configuración passport
