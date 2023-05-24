@@ -15,15 +15,13 @@ import cors from "cors"
 
 
 export const app = express();
-let PORT = `${config.PORT}`
+let PORT = config.PORT
 let STRING_CONNECTION = `mongodb+srv://${config.DB_USER}:${config.DB_PASS}@cluster0.tjewfez.mongodb.net/${config.DB_NAME}?retryWrites=true&w=majority`
 
 //Configuración del servidor
 const httpServer = app.listen(PORT,'127.0.0.1', async () => {
     console.log(`Server running on port ${PORT}`);
 });
-
-//pull
 
 //Middelware para trabajar con archivos .Json
 app.use(express.json());
@@ -32,7 +30,7 @@ app.use(express.static(__dirname +'/public'));
 app.use(cors())
 
 let sessionMiddleware = session({
-    secret: `${config.SESSION_SECRET}`,
+    secret: config.SESSION_SECRET,
     resave: true,
     saveUninitialized: false,
     store: MongoStore.create({
