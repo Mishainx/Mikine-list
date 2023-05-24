@@ -23,6 +23,8 @@ const httpServer = app.listen(PORT,'127.0.0.1', async () => {
     console.log(`Server running on port ${PORT}`);
 });
 
+//pull
+
 //Middelware para trabajar con archivos .Json
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,7 +44,7 @@ let sessionMiddleware = session({
       ttl: 1000,
     }),
   })
-  
+  console.log(config.SESSION_SECRET)
   app.use(sessionMiddleware);
 
 //Configuración passport
